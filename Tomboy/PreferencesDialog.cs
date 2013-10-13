@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -514,16 +513,16 @@ namespace Tomboy
 			}
 			Gtk.HBox autosyncBox = new Gtk.HBox (false, 5);
 			// Translators: This is and the next string go together.
-			// Together they look like "Automatically Sync in Background Every [_] Minutes",
+			// Together they look like "Sync in background every [_] minutes",
 			// where "[_]" is a GtkSpinButton.
 			autosyncCheck =
-				new Gtk.CheckButton (Catalog.GetString ("Automaticall_y Sync in Background Every"));
+				new Gtk.CheckButton (Catalog.GetString ("Sync in background ever_y"));
 			autosyncSpinner = new Gtk.SpinButton (5, 1000, 1);
 			autosyncSpinner.Value = timeout >= 5 ? timeout : 10;
 			Gtk.Label autosyncExtraText =
 				// Translators: See above comment for details on
 				// this string.
-				new Gtk.Label (Catalog.GetString ("Minutes"));
+				new Gtk.Label (Catalog.GetString ("minutes"));
 			autosyncCheck.Active = autosyncSpinner.Sensitive = timeout >= 5;
 			EventHandler updateTimeoutPref = (o, e) => {
 				Preferences.Set (Preferences.SYNC_AUTOSYNC_TIMEOUT,
